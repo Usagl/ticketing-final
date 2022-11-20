@@ -1,0 +1,281 @@
+{
+  "allowRemoteResourceManagement": true,
+  "policyEnforcementMode": "ENFORCING",
+  "resources": [
+    {
+      "name": "Default Resource",
+      "type": "urn:xentric_base:resources:default",
+      "ownerManagedAccess": false,
+      "attributes": {},
+      "_id": "510a8a9b-5d61-46fb-a967-2dbc9d959a25",
+      "uris": [
+        "/*"
+      ]
+    },
+    {
+      "name": "recurso1",
+      "ownerManagedAccess": false,
+      "attributes": {},
+      "_id": "f3c7c1cc-055a-4abf-abf1-c58cb7f48e31",
+      "uris": [
+        "recurso1"
+      ],
+      "scopes": [
+        {
+          "name": "view"
+        }
+      ],
+      "icon_uri": ""
+    },
+    {
+      "name": "recurso2",
+      "ownerManagedAccess": false,
+      "attributes": {},
+      "_id": "c625ab17-564b-40af-86be-aeca74cb89b8",
+      "uris": [
+        "recurso2"
+      ],
+      "scopes": [
+        {
+          "name": "view"
+        }
+      ],
+      "icon_uri": ""
+    },
+    {
+      "name": "recurso3",
+      "ownerManagedAccess": false,
+      "attributes": {},
+      "_id": "b46d9886-477f-4a1c-9547-d5f0a9832b07",
+      "uris": [
+        "recurso3"
+      ],
+      "scopes": [
+        {
+          "name": "view"
+        }
+      ],
+      "icon_uri": ""
+    },
+    {
+      "name": "recurso4",
+      "ownerManagedAccess": false,
+      "attributes": {},
+      "_id": "ad589548-7ce8-4f8b-80fa-686bf339669a",
+      "uris": [
+        "recurso4"
+      ],
+      "scopes": [
+        {
+          "name": "view"
+        },
+        {
+          "name": "update"
+        },
+        {
+          "name": "delete"
+        },
+        {
+          "name": "create"
+        }
+      ],
+      "icon_uri": ""
+    },
+    {
+      "name": "recurso5",
+      "ownerManagedAccess": false,
+      "attributes": {},
+      "_id": "f25f5d48-301f-4bd0-804d-d0140a022195",
+      "uris": [
+        "recurso5"
+      ],
+      "scopes": [
+        {
+          "name": "view"
+        }
+      ],
+      "icon_uri": ""
+    },
+    {
+      "name": "recurso6",
+      "ownerManagedAccess": false,
+      "attributes": {},
+      "_id": "9fa57e07-ca16-423d-91f9-06740b66517c",
+      "uris": [
+        "recurso6"
+      ],
+      "scopes": [
+        {
+          "name": "view"
+        }
+      ],
+      "icon_uri": ""
+    },
+    {
+      "name": "recurso7",
+      "ownerManagedAccess": false,
+      "attributes": {},
+      "_id": "61d37c96-3139-4700-9419-98100a3a775d",
+      "uris": [
+        "recurso7"
+      ],
+      "scopes": [
+        {
+          "name": "view"
+        }
+      ],
+      "icon_uri": ""
+    }
+  ],
+  "policies": [
+    {
+      "id": "98f2c6d5-4303-4c5d-821e-784334a3cee7",
+      "name": "role1-policy",
+      "description": "",
+      "type": "role",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "roles": "[{\"id\":\"xentric_base/role1\",\"required\":false}]"
+      }
+    },
+    {
+      "id": "089d804a-0221-4c6f-bdfc-63ed9e5e931f",
+      "name": "role2-policy",
+      "description": "",
+      "type": "role",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "roles": "[{\"id\":\"xentric_base/role2\",\"required\":false}]"
+      }
+    },
+    {
+      "id": "aea748ab-392f-4a1d-8cdb-552e3c7c482d",
+      "name": "recurso1-view",
+      "description": "",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "resources": "[\"recurso1\",\"recurso3\",\"recurso2\"]",
+        "scopes": "[\"view\"]",
+        "applyPolicies": "[\"role1-policy\"]"
+      }
+    },
+    {
+      "id": "2573be59-919b-4a7a-a624-d4270ece28aa",
+      "name": "recurso2-view",
+      "description": "",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "resources": "[\"recurso2\"]",
+        "scopes": "[\"view\"]",
+        "applyPolicies": "[\"role1-policy\"]"
+      }
+    },
+    {
+      "id": "46fd846c-7b4f-40a0-a138-ab72ee153a0d",
+      "name": "recurso4-FullAccess",
+      "description": "",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "resources": "[\"recurso4\"]",
+        "scopes": "[\"create\",\"delete\",\"view\",\"update\"]",
+        "applyPolicies": "[\"role1-policy\"]"
+      }
+    },
+    {
+      "id": "92d0f391-a24c-4fbf-a274-8a4a1d960c1a",
+      "name": "recurso3-view",
+      "description": "",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "resources": "[\"recurso3\"]",
+        "scopes": "[\"view\"]",
+        "applyPolicies": "[\"role1-policy\"]"
+      }
+    },
+    {
+      "id": "182e57ad-ff3b-4826-bdab-d24eaa60fbc7",
+      "name": "recurso4-view",
+      "description": "",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "AFFIRMATIVE",
+      "config": {
+        "resources": "[\"recurso4\"]",
+        "scopes": "[\"view\"]",
+        "applyPolicies": "[\"role1-policy\",\"role2-policy\"]"
+      }
+    },
+    {
+      "id": "d36b5a67-1912-4ef2-910b-07e52a4d8807",
+      "name": "recurso5-view",
+      "description": "",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "resources": "[\"recurso5\"]",
+        "scopes": "[\"view\"]",
+        "applyPolicies": "[\"role1-policy\"]"
+      }
+    },
+    {
+      "id": "96bd4dd0-7e17-43a9-8c2a-71779acb4c85",
+      "name": "recurso6-view",
+      "description": "",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "resources": "[\"recurso6\"]",
+        "scopes": "[\"view\"]",
+        "applyPolicies": "[\"role1-policy\"]"
+      }
+    },
+    {
+      "id": "8cab41ef-2885-4111-8091-22809fc279de",
+      "name": "recurso7-view",
+      "description": "",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "resources": "[\"recurso7\"]",
+        "scopes": "[\"view\"]",
+        "applyPolicies": "[\"role1-policy\"]"
+      }
+    }
+  ],
+  "scopes": [
+    {
+      "id": "496c1422-7185-43dc-9a06-adb278929a59",
+      "name": "view",
+      "iconUri": ""
+    },
+    {
+      "id": "1062cafe-5313-4e45-a37a-6b6286d2cf62",
+      "name": "create",
+      "iconUri": ""
+    },
+    {
+      "id": "63ee413a-d102-4d07-a766-1e00effaea6d",
+      "name": "delete",
+      "iconUri": ""
+    },
+    {
+      "id": "2ad737f2-7e39-41c4-9e6f-2a2b891bc1cf",
+      "name": "update",
+      "iconUri": ""
+    }
+  ],
+  "decisionStrategy": "UNANIMOUS"
+}
